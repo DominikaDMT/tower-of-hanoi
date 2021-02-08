@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import './App.css';
+
+import Pin from './elements/Pin';
+import Ring from './elements/Ring';
+import Tower from './elements/Tower';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='wrapper'>
+      <Tower name={1} amountOfRings={10}/>
+      <Tower name={2} amountOfRings={0}/>
+      <Tower name={3} amountOfRings={0}/>
     </div>
   );
 }

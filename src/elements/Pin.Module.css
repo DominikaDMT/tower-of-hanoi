@@ -1,0 +1,33 @@
+.Pin {
+  width: 4%;
+  height: 50%;
+  background: rgb(164,110,83);
+  background: linear-gradient(90deg, rgba(164,110,83,1) 0%, rgb(244, 207, 173) 54%, rgba(164,110,83,1) 100%);
+  border-radius: 2vh 2vh 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: flex-end; */
+}
+
+.Pin:hover {
+  background: rgb(198,147,122);
+  background: linear-gradient(90deg, rgba(198,147,122,1) 0%, rgba(242,228,215,1) 54%, rgba(198,147,122,1) 100%);
+
+}
+
+.Pin::after {
+  content: '';
+  position: absolute;
+  transform-origin: center ;
+  transform: translateX(-45%);
+  bottom: -5%;
+  width: 1000%;
+  height: 5%;
+  background: rgb(164,110,83);
+  background: linear-gradient(90deg, rgba(164,110,83,1) 0%, rgba(244,207,173,1) 54%, rgba(164,110,83,1) 100%);
+  box-shadow: 0 1px 1px rgb(65, 52, 52);
+}
