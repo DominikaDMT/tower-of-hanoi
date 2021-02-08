@@ -5,7 +5,7 @@ import Ring from './Ring'
 
 const Pin = (props) => {
   return ( 
-    <div className={classes.Pin} name={props.name}>
+    <div className={classes.Pin} name={props.name} onClick={() => props.selectPin(props.name)}>
     </div>
   )
 }

@@ -7,7 +7,9 @@
   border-radius: 10vh
 }
 
-.Ring:hover {
+
+.Ring:nth-child(1):hover {
+  cursor: pointer;
   background: rgb(227,91,91);
 background: linear-gradient(0deg, rgba(227,91,91,1) 0%, rgba(250,125,125,1) 52%, rgba(227,91,91,1) 100%);
 

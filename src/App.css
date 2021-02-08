@@ -8,7 +8,7 @@
   margin: 10vh auto;
   width: 80vw;
   height: 80vh;
-  background-color: rgb(154, 154, 185);
+  /* background-color: rgb(154, 154, 185); */
   display: flex;
   align-items: center;
   justify-content: space-evenly;

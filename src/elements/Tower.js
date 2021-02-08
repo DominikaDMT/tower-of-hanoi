@@ -2,34 +2,25 @@ import React from 'react';
 import Pin from './Pin';
 import Ring from './Ring';
 
-import classes from './Tower.Module.css'
+import classes from './Tower.Module.css';
 
 const Tower = (props) => {
-  const {amountOfRings} = props
-  // console.log(props, amountOfRings);
+  let rings = props.rings;
 
-  let rings = [];
 
-  for (let i = 0; i < amountOfRings; i++){
-    rings.push({
-      size: i+1
-    })
+  if (rings.length > 0) {
+    rings = rings.map((ring, index) => <Ring key={ring} size={ring} selectRing={props.selectRing} pinName={props.name}/>);
   }
-  
-  rings = rings.map(ring => (
-    <Ring key={ring.size} size={ring.size}/>
-  ))
 
-
-  return ( 
+  return (
     <div className={classes.Tower}>
-      <Pin name={props.name}/>
+      <Pin name={props.name} selectPin={props.selectPin}/>
       <div className={classes.Rings}>
         {rings}
-      </div>
+        </div>
       {props.children}
     </div>
   );
-}
+};
 
 export default Tower;
