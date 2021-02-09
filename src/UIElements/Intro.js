@@ -15,9 +15,9 @@ const Intro = (props) => {
 
   return (
     <div className={classes.Intro}>
-      <h1>Wierze Hanoi</h1>
+      <h1>Wieże Hanoi</h1>
       <p>
-        {`Celem gry jest przestawienie wierzy z pierwszego stosu na trzeci - z
+        {`Celem gry jest przestawienie wieży z pierwszego stosu na trzeci - z
         zachowaniem 
         takiej samej kolejności krążków. Należy przekładać po jednym
         krążku,
