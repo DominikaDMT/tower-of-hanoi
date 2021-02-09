@@ -5,23 +5,35 @@ import './App.css';
 import Pin from './elements/Pin';
 import Ring from './elements/Ring';
 import Tower from './elements/Tower';
+import Backdrop from './UIElements/Backdrop';
+import Intro from './UIElements/Intro';
 import Statistics from './UIElements/Statistics';
 import Warning from './UIElements/Warning';
 
-function App(props) {
-  const initialState = [];
-  for (let i = 0; i < props.initialAmount; i++) {
-    initialState.push(i + 1);
-  }
-
+function App() {
   const [towers, setTowers] = useState({
-    1: initialState,
+    1: [],
     2: [],
     3: [],
   });
   const [ringAndTower, setRingAndTower] = useState([0, 0]);
   const [message, setMessage] = useState('');
   const [counter, setCounter] = useState(0);
+  const [initialAmountOfRings, setInitialAmountOfRings] = useState(3);
+  const [isModalVisible, setIsModalVisible] = useState(true);
+
+  const startGame = (number) => {
+    const initialState = [];
+    for (let i = 0; i < number; i++) {
+      initialState.push(i + 1);
+    }
+    setTowers((prevState) => ({
+      ...prevState,
+      [1]: initialState,
+    }));
+    setInitialAmountOfRings(number);
+    setIsModalVisible(false);
+  };
 
   const updateMessage = (mssg) => {
     setMessage(mssg);
@@ -57,10 +69,7 @@ function App(props) {
           [`${number}`]: filledTower,
         }));
         setRingAndTower([0, 0]);
-        setCounter(prevState => prevState + 1
-        )
-  
-        console.log(counter);
+        setCounter((prevState) => prevState + 1);
       } else {
         updateMessage('Nie możesz kłaść większego krążka na mniejszy');
       }
@@ -69,28 +78,28 @@ function App(props) {
     }
   };
 
+  let TowerComponents = [];
+  for (let i = 1; i < 4; i++) {
+    TowerComponents.push(
+      <Tower
+        name={i}
+        rings={towers[`${i}`]}
+        selectRing={updateSelectedRing}
+        selectPin={selectPin}
+      />
+    );
+  }
+
   return (
     <>
+      {isModalVisible && (
+        <Backdrop >
+          <Intro startGame={startGame} />
+        </Backdrop>
+      )}
       <div className='wrapper'>
-        <Tower
-          name={1}
-          rings={towers['1']}
-          selectRing={updateSelectedRing}
-          selectPin={selectPin}
-        />
-        <Tower
-          name={2}
-          rings={towers['2']}
-          selectRing={updateSelectedRing}
-          selectPin={selectPin}
-        />
-        <Tower
-          name={3}
-          rings={towers['3']}
-          selectRing={updateSelectedRing}
-          selectPin={selectPin}
-        />
-        <Statistics initialAmount={props.initialAmount} count={counter}/>
+        {TowerComponents}
+        <Statistics initialAmount={initialAmountOfRings} count={counter} />
       </div>
       {message !== '' && <Warning>{message}</Warning>}
     </>
