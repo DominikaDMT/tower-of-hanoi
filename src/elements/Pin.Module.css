@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-.Pin:hover {
+.Pin:hover, .Pin:hover::after {
   background: rgb(198,147,122);
   background: linear-gradient(90deg, rgba(198,147,122,1) 0%, rgba(242,228,215,1) 54%, rgba(198,147,122,1) 100%);
 

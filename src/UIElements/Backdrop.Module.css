@@ -8,3 +8,9 @@
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(5px);
 }
+
+
+.Backdrop p {
+  font-size: 1.8rem;
+  padding: 3% 3%;
+}
