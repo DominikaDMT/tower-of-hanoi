@@ -1,0 +1,21 @@
+.Button {
+  display: block;
+  padding: 3px 20px;
+  margin: 3px auto;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: bold;
+  border: #222 2px solid;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.Button:hover {
+  background-color: #222;
+  color: white;
+  border: #222 2px solid;
+}
+
+.Button:focus {
+  border: none
+}
