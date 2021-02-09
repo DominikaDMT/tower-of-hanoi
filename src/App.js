@@ -20,6 +20,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [counter, setCounter] = useState(0);
   const [initialAmountOfRings, setInitialAmountOfRings] = useState(3);
+  const [isGameOver, setIsGameOver] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(true);
 
   const startGame = (number) => {
@@ -82,12 +83,20 @@ function App() {
   for (let i = 1; i < 4; i++) {
     TowerComponents.push(
       <Tower
+        key={i}
         name={i}
         rings={towers[`${i}`]}
         selectRing={updateSelectedRing}
         selectPin={selectPin}
       />
     );
+  }
+
+
+  if (towers['1'].length === 0 && towers['2'].length === 0 & towers['3'].length === initialAmountOfRings) {
+    setTimeout(() => {
+      setIsGameOver(true);
+    }, 1000);
   }
 
   return (
@@ -99,7 +108,7 @@ function App() {
       )}
       <div className='wrapper'>
         {TowerComponents}
-        <Statistics initialAmount={initialAmountOfRings} count={counter} />
+        <Statistics initialAmount={initialAmountOfRings} count={counter} isGameOver={isGameOver} />
       </div>
       {message !== '' && <Warning>{message}</Warning>}
     </>

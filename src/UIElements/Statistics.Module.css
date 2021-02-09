@@ -11,11 +11,9 @@
   color: #222;
 }
 
-
-.Paragraph {
-  font-size: 1.8rem;
+.Statistics .Paragraph {
+  font-size: 1.8rem; 
   line-height: 140%;
-
 }
 
 .Paragraph strong {

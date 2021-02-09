@@ -19,6 +19,14 @@ const Statistics = (props) => {
     window.location.reload();
   }
 
+  let paragraph = ''
+  if (props.isGameOver && minNumber === props.count) {
+    paragraph = `Rozwiązałeś układankę z wykorzystaniem możliwie najmniejszej ilości
+    ruchów!`
+  } else if (props.isGameOver && minNumber < props.count) {
+    paragraph = `Rozwiązałeś układankę!`
+  }
+
   return (
     <>
       <div className={classes.Statistics}>
@@ -30,13 +38,11 @@ const Statistics = (props) => {
           <strong>{minNumber}</strong>
         </p>
       </div>
-      {minNumber === props.count && (
+      {props.isGameOver && (
         <Backdrop >
           <div className={classes.Congrats}>
             <h1>Gratulacje!</h1>
-            <p>
-              Rozwiązałeś układankę z wykorzystaniem możliwie najmniejszej ilości
-              ruchów!
+            <p> {paragraph}
             </p>
             <Button click={reloadPage}>Zagraj jeszcze raz</Button>
           </div>
