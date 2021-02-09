@@ -1,0 +1,19 @@
+.Warning {
+  position: absolute;
+  width: 50vw;
+  height: 10vh;
+  max-height: 60px;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(252, 230, 230);
+  border-radius: 10px;
+}
+
+.Paragraph {
+  font-size: 1.8rem;
+
+}
