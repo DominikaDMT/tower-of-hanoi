@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/tower-of-hanoi/static/css/main.54eb42a5.chunk.css",
-    "main.js": "/tower-of-hanoi/static/js/main.f7120aa9.chunk.js",
-    "main.js.map": "/tower-of-hanoi/static/js/main.f7120aa9.chunk.js.map",
+    "main.css": "/tower-of-hanoi/static/css/main.620d8ab8.chunk.css",
+    "main.js": "/tower-of-hanoi/static/js/main.009cec84.chunk.js",
+    "main.js.map": "/tower-of-hanoi/static/js/main.009cec84.chunk.js.map",
     "runtime-main.js": "/tower-of-hanoi/static/js/runtime-main.130d87d8.js",
     "runtime-main.js.map": "/tower-of-hanoi/static/js/runtime-main.130d87d8.js.map",
-    "static/js/2.df072faa.chunk.js": "/tower-of-hanoi/static/js/2.df072faa.chunk.js",
-    "static/js/2.df072faa.chunk.js.map": "/tower-of-hanoi/static/js/2.df072faa.chunk.js.map",
+    "static/js/2.5424e756.chunk.js": "/tower-of-hanoi/static/js/2.5424e756.chunk.js",
+    "static/js/2.5424e756.chunk.js.map": "/tower-of-hanoi/static/js/2.5424e756.chunk.js.map",
     "static/js/3.d0b2d5d0.chunk.js": "/tower-of-hanoi/static/js/3.d0b2d5d0.chunk.js",
     "static/js/3.d0b2d5d0.chunk.js.map": "/tower-of-hanoi/static/js/3.d0b2d5d0.chunk.js.map",
     "index.html": "/tower-of-hanoi/index.html",
-    "static/css/main.54eb42a5.chunk.css.map": "/tower-of-hanoi/static/css/main.54eb42a5.chunk.css.map",
-    "static/js/2.df072faa.chunk.js.LICENSE.txt": "/tower-of-hanoi/static/js/2.df072faa.chunk.js.LICENSE.txt"
+    "static/css/main.620d8ab8.chunk.css.map": "/tower-of-hanoi/static/css/main.620d8ab8.chunk.css.map",
+    "static/js/2.5424e756.chunk.js.LICENSE.txt": "/tower-of-hanoi/static/js/2.5424e756.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.130d87d8.js",
-    "static/js/2.df072faa.chunk.js",
-    "static/css/main.54eb42a5.chunk.css",
-    "static/js/main.f7120aa9.chunk.js"
+    "static/js/2.5424e756.chunk.js",
+    "static/css/main.620d8ab8.chunk.css",
+    "static/js/main.009cec84.chunk.js"
   ]
 }
