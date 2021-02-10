@@ -46,7 +46,9 @@ const Statistics = (props) => {
           <div className={classes.Congrats}>
             <h1>Gratulacje!</h1>
             <p> {paragraph}</p>
+            <div className={classes.RestartGameBtn}>
               <Button click={reloadPage}>Zagraj jeszcze raz</Button>
+            </div>
           </div>
         </Backdrop>
       )}

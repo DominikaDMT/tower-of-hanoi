@@ -1,7 +1,5 @@
 .Warning {
   position: absolute;
-  min-width: 50vw;
-  min-width: auto;
   height: 10vh;
   max-height: 60px;
   left: 50%;
@@ -13,9 +11,24 @@
   justify-content: center;
   background-color: rgb(252, 230, 230);
   border-radius: 10px;
+  text-align: center;
+  flex-grow: 1;
 }
 
 .Paragraph {
   font-size: 1.8rem;
 
+}
+
+@media (max-width: 850px) {
+  .Warning {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 520px) {
+  .Paragraph {
+    font-size: 1.6rem;
+  }
 }

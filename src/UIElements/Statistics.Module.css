@@ -26,7 +26,6 @@
   transform: translate(-50%, -50%);
   padding: 3% 5%;
   width: 80vw;
-  max-height: ;
   max-width: 1000px;
   font-size: 1.8rem;
   border-radius: 25px;
@@ -42,9 +41,13 @@ div.Btn {
   margin: 3%;
 }
 
+div.RestartGameBtn {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 520px) {
   .Statistics .Paragraph {
     font-size: 1.6rem;
-    /* line-height: 140%; */
   }
 }
