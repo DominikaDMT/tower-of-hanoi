@@ -1,16 +1,61 @@
 .Ring {
   z-index: 1;
   width: 10%;
-  height: 2.5vh;
+  height: 2.8vh;
   background: rgb(158, 37, 37);
-  background: linear-gradient(0deg, rgb(158, 37, 37) 0%, rgba(209,85,85,1) 52%, rgb(158, 37, 37) 100%);
-  border-radius: 10vh
+  background: linear-gradient(
+    0deg,
+    rgb(158, 37, 37) 0%,
+    rgba(209, 85, 85, 1) 52%,
+    rgb(158, 37, 37) 100%
+  );
+  border-radius: 10vh;
 }
-
 
 .Ring:nth-child(1):hover {
   cursor: pointer;
   background: rgb(184, 61, 61);
-background: linear-gradient(0deg, rgb(184, 61, 61) 0%, rgba(250,125,125,1) 52%, rgb(184, 61, 61) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(184, 61, 61) 0%,
+    rgba(250, 125, 125, 1) 52%,
+    rgb(184, 61, 61) 100%
+  );
+}
 
+.active {
+  box-shadow: 0px 0px 15px 2px #ff0000;
+  background: rgb(184, 61, 61);
+  background: linear-gradient(
+    0deg,
+    rgb(184, 61, 61) 0%,
+    rgba(250, 125, 125, 1) 52%,
+    rgb(184, 61, 61) 100%
+  );
+  /* z-index: 5; */
+}
+
+@media (max-height: 768px) and (orientation: landscape) {
+  .Ring {
+    height: 3.2vh;
+  }
+}
+
+@media (max-height: 640px) and (orientation: landscape) {
+  .Ring {
+    height: 4vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .Ring {
+    height: 3.2vh;
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .Ring {
+    height: 3.5vh;
+    width: 50%;
+  }
 }

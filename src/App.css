@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: 'Cairo', sans-serif;
   font-size: 10px;
-
 }
 
 .wrapper {
@@ -17,4 +16,16 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    justify-content: space-evenly;
+  }
 }

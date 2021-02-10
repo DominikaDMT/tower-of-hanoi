@@ -3,9 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 3% 5%;
+  padding: 5%;
   width: 80vw;
-  max-height: ;
   max-width: 1000px;
   font-size: 1.8rem;
   border-radius: 25px;
@@ -20,14 +19,14 @@ h1 {
 }
 
 .Intro p {
-  padding: 4% 0;
   text-align: justify;
   font-size: 1.8rem;
+  line-height: 140%;
 }
 
 .Navigation {
   display: flex;
-  height: 5rem;
+  max-height: 66px;
   max-width: 700px;
   margin: 10px auto;
   justify-content: center;
@@ -36,20 +35,19 @@ h1 {
 label {
   font-size: 1.8rem;
   font-weight: bold;
-  line-height: 5rem;
+  max-height: 66px;
+  margin: 5%;
   text-align: center;
+  align-self: center;
   margin: 0 1%;
 }
 
 select,
 option {
   padding: 3px 20px;
-  margin: 3px;
   text-align: center;
   font-size: 1.8rem;
-  line-height: 1.8rem;
   border: #ddd 2px solid;
-  border-radius: 10px;
   appearance: none;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAJ1BMVEX///8AAADMzMx/f398fHx5eXl1dXVxcXHy8vLDw8N0dHRtbW2oqKhLKPHWAAABc0lEQVR4nO3XC26DMBAFQFrybXv/81bIikhTICQY2WvNnCBP+7Jeug4AAAAAAAAAAAAAAAAAAAAAAAAAgKgu18/9XC+l4w3OH/v5Lh0u6XcLeCgd7WaviMfSwUanXQKeS8e6t8cUq6lokj9iZQG77pA5YEX/wZtj1oCn0nGm5CxqdRVN8kWsNGC+on6VDjIvz7qpcMmMchS12oom26dY9QQHWw+4qk61aduKWnlFky0RQwTc8mhUeclMeXfdVL9kRu8VNUhFk3cihgr4zqMR4Jn469UpBvoP3rwWMVhFk1c2asAJDta/ixV/Li1bW9SQFU3WRQwccF1Rw5xq056vm6BLZvSsqKErmixHbCDg8gEX7lSbNj/FJiY4mIvYTMC5jRp+i96beheDv4OP/he1oYomjxGbC/hY1LBfE0vu101TS2bUt1zRpG97goN0wDVyqk3rW65o0rcesOt+Sv8AAAAAAAAAAAAAAAAAAAAAAAAA6vALVn0Kz2oMp0IAAAAASUVORK5CYII=');
   background-position: right;
@@ -57,3 +55,58 @@ option {
   background-size: 50%;
 }
 
+@media (max-width: 800px) {
+  .Intro {
+    padding: 4% 4% 5% 4%;
+  }
+
+  .Navigation {
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .Intro p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 540px) and (orientation: portrait) {
+  .Button {
+    width: 100%;
+  }
+
+  .Intro {
+    padding: 3% 3% 5% 3%;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .Intro p {
+    text-align: justify;
+    font-size: 1.4rem;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 525px) and (orientation: portrait) {
+  label {
+    margin-bottom: 4%;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .Intro {
+    min-height: 370px;
+  }
+}
+
+@media (max-width: 410px) and (orientation: portrait) {
+  .Intro {
+    min-height: 390px;
+  }
+}
