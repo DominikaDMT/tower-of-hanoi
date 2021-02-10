@@ -46,6 +46,7 @@ function App() {
   const updateSelectedRing = (size, towerNumber) => {
     if (size !== Math.min(...towers[`${towerNumber}`])) {
       updateMessage('Wybierz najmniejszy krążek ze stosu!');
+      setRingAndTower([0, 0]);
     } else {
       setRingAndTower([size, towerNumber]);
     }
@@ -79,6 +80,14 @@ function App() {
     }
   };
 
+
+
+  if (towers['1'].length === 0 && towers['2'].length === 0 & towers['3'].length === initialAmountOfRings) {
+    setTimeout(() => {
+      setIsGameOver(true);
+    }, 1000);
+  }
+
   let TowerComponents = [];
   for (let i = 1; i < 4; i++) {
     TowerComponents.push(
@@ -88,15 +97,10 @@ function App() {
         rings={towers[`${i}`]}
         selectRing={updateSelectedRing}
         selectPin={selectPin}
+        initialAmount={initialAmountOfRings}
+        selectedRing={ringAndTower[0]}
       />
     );
-  }
-
-
-  if (towers['1'].length === 0 && towers['2'].length === 0 & towers['3'].length === initialAmountOfRings) {
-    setTimeout(() => {
-      setIsGameOver(true);
-    }, 1000);
   }
 
   return (

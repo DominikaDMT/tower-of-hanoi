@@ -9,9 +9,9 @@ const Tower = (props) => {
 
 
   if (rings.length > 0) {
-    rings = rings.map((ring, index) => <Ring key={ring} size={ring} selectRing={props.selectRing} pinName={props.name}/>);
+    rings = rings.map((ring, index) => <Ring key={ring} size={ring} selectRing={props.selectRing} pinName={props.name} initialAmount={props.initialAmount} selectedRing={props.selectedRing}/>);
   }
-
+console.log(props);
   return (
     <div className={classes.Tower}>
       <Pin name={props.name} selectPin={props.selectPin}/>
