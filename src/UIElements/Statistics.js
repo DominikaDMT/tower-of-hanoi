@@ -22,9 +22,9 @@ const Statistics = (props) => {
   let paragraph = '';
   if (props.isGameOver && minNumber === props.count) {
     paragraph = `Rozwiązałeś układankę z wykorzystaniem możliwie najmniejszej ilości
-    ruchów!`;
+    ruchów - ${minNumber}!`;
   } else if (props.isGameOver && minNumber < props.count) {
-    paragraph = `Rozwiązałeś układankę!`;
+    paragraph = `Rozwiązałeś układankę w ${props.count} ruchach! Następnym razem postaraj się rozwiąć ją w ${minNumber} ruchach.`;
   }
 
   return (
@@ -34,8 +34,7 @@ const Statistics = (props) => {
           Liczba Twoich ruchów: <strong>{props.count}</strong>
         </p>
         <p className={classes.Paragraph}>
-          Minimalna liczba ruchów, potrzebna do rozwiązania tej układanki:{' '}
-          <strong>{minNumber}</strong>
+          Minimalna liczba ruchów, potrzebna do rozwiązania tej układanki: <strong>{minNumber}</strong>
         </p>
         <div className={classes.Btn}>
         <Button click={reloadPage}>Zacznij grę od nowa</Button>
