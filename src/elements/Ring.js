@@ -19,11 +19,20 @@ const Ring = (props) => {
     allClasses = `${classes.Ring}`
   }
 
+  const dragging = (e) => {
+    e.dataTransfer.setData('text/plain', `${e.target.id}`);
+    e.dataTransfer.effectAllowed ='move';
+    props.selectRing(props.size, props.pinName)
+
+  }
+
   return (
     <div
+      id={props.size}
       className={allClasses}
       style={{ width: `${props.size * ratio + 15}%` }}
       onClick={() => props.selectRing(props.size, props.pinName)}
+      draggable={true} onDragStart={(e) => dragging(e)}
     >
       {/* {props.size} */}
     </div>

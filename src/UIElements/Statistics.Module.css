@@ -50,4 +50,9 @@ div.RestartGameBtn {
   .Statistics .Paragraph {
     font-size: 1.6rem;
   }
+
+  .Congrats p {
+    text-align: justify;
+    text-align-last: center;
+  }
 }
