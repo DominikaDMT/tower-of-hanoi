@@ -1,5 +1,4 @@
 import React from 'react';
-import Pin from './Pin';
 import Ring from './Ring';
 
 import classes from './Tower.Module.css';
@@ -12,7 +11,8 @@ const Tower = (props) => {
       <Ring
         key={ring}
         size={ring}
-        selectRing={props.selectRing}
+        selectRingByClick={props.selectRingByClick}
+        selectRingByDrag={props.selectRingByDrag}
         pinName={props.name}
         initialAmount={props.initialAmount}
         selectedRing={props.selectedRing}
@@ -41,12 +41,13 @@ const Tower = (props) => {
 
   return (
     <div className={classes.Tower}>
-      <Pin name={props.name} selectPin={props.selectPin} />
+      <div className={classes.Pin} name={props.name}></div>
       <div
+        className={classes.Rings}
         onDragEnter={(e) => handleDragEnter(e)}
         onDragOver={(e) => handleDragOver(e)}
         onDrop={(e) => handleDrop(e)}
-        className={classes.Rings}
+        onClick={() => props.selectPin(props.name)}
         style={{ zIndex: 5 }}
       >
         {rings}

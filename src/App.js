@@ -2,8 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import './App.css';
 
-import Pin from './elements/Pin';
-import Ring from './elements/Ring';
 import Tower from './elements/Tower';
 import Backdrop from './UIElements/Backdrop';
 import Intro from './UIElements/Intro';
@@ -44,12 +42,22 @@ function App() {
   };
 
   const updateSelectedRing = (size, towerNumber) => {
-    if (size !== Math.min(...towers[`${towerNumber}`])) {
+    if (size === ringAndTower[0]) {
+      setRingAndTower([0, 0]);
+    } else if (size !== Math.min(...towers[`${towerNumber}`])) {
       updateMessage('Wybierz najmniejszy krążek ze stosu!');
       setRingAndTower([0, 0]);
     } else {
       setRingAndTower([size, towerNumber]);
     }
+  };
+
+  const selectRingByClick = (e, size, towerNumber) => {
+    e.stopPropagation();
+    updateSelectedRing(size, towerNumber);
+  };
+  const selectRingByDrag = (size, towerNumber) => {
+    updateSelectedRing(size, towerNumber);
   };
 
   const selectPin = (number) => {
@@ -80,9 +88,8 @@ function App() {
     }
   };
 
-
-
-  if (towers['1'].length === 0 && towers['2'].length === 0 & towers['3'].length === initialAmountOfRings) {
+  if (
+    towers['1'].length === 0 && towers['2'].length === 0 && towers['3'].length === initialAmountOfRings) {
     setTimeout(() => {
       setIsGameOver(true);
     }, 1000);
@@ -95,7 +102,8 @@ function App() {
         key={i}
         name={i}
         rings={towers[`${i}`]}
-        selectRing={updateSelectedRing}
+        selectRingByClick={selectRingByClick}
+        selectRingByDrag={selectRingByDrag}
         selectPin={selectPin}
         initialAmount={initialAmountOfRings}
         selectedRing={ringAndTower[0]}

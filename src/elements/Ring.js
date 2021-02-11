@@ -20,9 +20,10 @@ const Ring = (props) => {
   }
 
   const dragging = (e) => {
+    e.stopPropagation();
     e.dataTransfer.setData('text/plain', `${e.target.id}`);
     e.dataTransfer.effectAllowed ='move';
-    props.selectRing(props.size, props.pinName)
+    props.selectRingByDrag(props.size, props.pinName)
 
   }
 
@@ -31,7 +32,7 @@ const Ring = (props) => {
       id={props.size}
       className={allClasses}
       style={{ width: `${props.size * ratio + 15}%` }}
-      onClick={() => props.selectRing(props.size, props.pinName)}
+      onClick={(e) => props.selectRingByClick(e, props.size, props.pinName)}
       draggable={true} onDragStart={(e) => dragging(e)}
     >
       {/* {props.size} */}

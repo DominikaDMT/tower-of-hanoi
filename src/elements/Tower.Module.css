@@ -18,3 +18,99 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+
+/* -------------- PIN --------------- */
+
+.Pin {
+  width: 8.5%;
+  min-width: 8%;
+  height: 50%;
+  background: rgb(164, 110, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(164, 110, 83, 1) 0%,
+    rgb(244, 207, 173) 54%,
+    rgba(164, 110, 83, 1) 100%
+  );
+  border-radius: 2vh 2vh 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+
+/* .Rings + .Pin
+.Pin:hover,
+.Pin:hover::after, .Hover
+{
+  background: rgb(198, 147, 122);
+  background: linear-gradient(
+    90deg,
+    rgba(198, 147, 122, 1) 0%,
+    rgba(242, 228, 215, 1) 54%,
+    rgba(198, 147, 122, 1) 100%
+  );
+} */
+
+.Rings:hover{
+  cursor: pointer;
+}
+
+.Pin::after {
+  content: '';
+  position: absolute;
+  transform-origin: center;
+  transform: translateX(-44.5%);
+  bottom: -6%;
+  width: 1000%;
+  height: 6%;
+  background: rgb(164, 110, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(164, 110, 83, 1) 0%,
+    rgba(244, 207, 173, 1) 54%,
+    rgba(164, 110, 83, 1) 100%
+  );
+  box-shadow: 0 1px 1px rgb(65, 52, 52);
+  border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+  .Pin {
+    width: 9%;
+  }
+
+  .Pin::after {
+    width: 24vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .Pin {
+    width: 10%;
+  }
+
+  .Pin::after {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .Pin {
+    width: 12%;
+  }
+  .Pin::after {
+    width: 26vw;
+    transform: translateX(-43%);
+  }
+}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .Pin {
+    width: 13%;
+    /* height: 60%; */
+  }
+}
